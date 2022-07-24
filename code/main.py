@@ -7,7 +7,7 @@ import os
 
 os.chdir(os.path.dirname(__file__))
 
-a = "OTczOTE3OTY2MjYzNTM3Njg0.G9sk1P.zBzB0aIZp7NLI-gkIO8L2oDACkF-sK3AYMDOxk" # env soon
+a = "token here" # env soon
 b = discord.Client()
 c = 0 
 d = {}
