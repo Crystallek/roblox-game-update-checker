@@ -7,7 +7,10 @@ import os
 
 os.chdir(os.path.dirname(__file__))
 
-a = "token here" # env soon
+with open("data/token.txt", "r") as f:
+    a = f.readlines()[0]
+    f.close()
+
 b = discord.Client()
 c = 0 
 d = {}
@@ -60,17 +63,17 @@ async def on_message(message):
             await message.channel.send(f"Succesfully added {r2['data'][0]['name']} to the list!")
         except KeyError:
             await message.channel.send(f"Please enter valid place ID, {message.content.split('.addgame ')[1]} isn\'t.")
-        except:
+        except BaseException:
             await message.channel.send("Unknown error, try again.")
     
     if message.content.startswith(".removegame"):
         try:
             r = json.loads(requests.get(f'https://api.roblox.com/universes/get-universe-containing-place?placeid={message.content.split(".removegame ")[1]}').text)
-        except:
+        except BaseException:
             await message.channel.send("Couldn't delete the game, because of an Roblox API error.")
         try:
             del d[r["UniverseId"]]
-        except:
+        except BaseException:
             await message.channel.send("Couldn't delete the game, because it doesn't exist.")
         else:
             await message.channel.send("Successfully removed.")
@@ -100,7 +103,7 @@ async def on_message(message):
                     if r["UniverseId"] not in d:
                         d[r["UniverseId"]] = str(r2['data'][0]['updated'])
                         await message.channel.send(f"Succesfully added {r2['data'][0]['name']} to the list!")
-                except:
+                except BaseException:
                     await message.channel.send(f"Invalid game ID (\"{game}\"). Skipping...")
                 time.sleep(0.2)
     
