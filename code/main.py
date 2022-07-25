@@ -32,7 +32,7 @@ async def timer():
     if not f:
         time.sleep(0.1)
     else:
-        time.sleep(2)
+        time.sleep(1)
 
 @b.event
 async def on_ready():
