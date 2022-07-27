@@ -91,7 +91,7 @@ async def on_message(message):
         f = False
         await message.channel.send("Checking has stopped!")
 
-    if message.content.startswith(".getdatafromfile"):
+    if message.content.startswith(".getgamesfromfile"):
         with open("data/games.txt", "r") as i:
             for line in i.readlines():
                 e.append(line.strip())
@@ -107,7 +107,7 @@ async def on_message(message):
                     await message.channel.send(f"Invalid game ID (\"{game}\"). Skipping...")
                 time.sleep(0.2)
     
-    if message.content.startswith(".erasedata"):
+    if message.content.startswith(".erasegames"):
         d = {}
         await message.channel.send("Erased.")
 
