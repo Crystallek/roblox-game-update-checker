@@ -17,6 +17,7 @@ Commands:
 
 TODO (in this order):
   - .info command
+  - erase games from file
   - optimalisation (it sucks now in my opinion, could be better)
   - replace global vars with bot vars
   - and some more things i will find...
