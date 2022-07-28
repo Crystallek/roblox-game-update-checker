@@ -1,3 +1,5 @@
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/Crystallek/discord-chat-logger.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Crystallek/discord-chat-logger/context:python)
+
 # roblox-game-update-checker
 A Discord bot, which will update you about roblox game updates you choose.
 
