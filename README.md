@@ -2,10 +2,11 @@
 
 # roblox-game-update-checker
 A Discord bot, which will update you about roblox game updates you choose.
+Should work on replit too (haven't tried it tho)
 
 How to use:
   - insert the bot's token into token.txt file located in data folder
-  - if you want, you can insert the game id's you want to check for update into games.txt folder, but you can add them later.
+  - if you want, you can insert the game ids you want to check for update into games.txt folder, but you can add them later.
   - run it
  
 Commands:
