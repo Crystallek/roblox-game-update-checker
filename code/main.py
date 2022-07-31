@@ -22,7 +22,6 @@ async def timer():
     if f:
         await b.wait_until_ready()
         channel = b.get_channel(c)
-
         try:
             for games in d:
                 t = json.loads(requests.get(f'https://games.roblox.com/v1/games?universeIds={games}').text)
