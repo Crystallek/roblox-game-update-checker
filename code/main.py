@@ -31,10 +31,8 @@ async def timer():
         except Exception as e:
             return f"Error: {e}"
     
-    if not f:
-        time.sleep(0.1)
-    else:
-        time.sleep(1)
+    if not f: time.sleep(0.1)
+    else: time.sleep(1)
 
 @b.event
 async def on_ready():
