@@ -17,7 +17,7 @@ Commands:
   - .start - Starts the checking.
   - .stop - Stops the checking (can take longer to respond)
   - .getgamesfromfile - Loads the games from file into memory.
-  - .erasegames - Delete all the games from memory (it won't delete them from the file though)
+  - .erasegames - Delete all games from memory (it won't delete them from the file though)
 
 TODO (in this order):
   - .info command
