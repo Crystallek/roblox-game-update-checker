@@ -7,8 +7,8 @@ import os
 
 os.chdir(os.path.dirname(__file__))
 
-with open("data/token.txt", "r") as f:
-    a = f.readlines()[0]
+with open("data/data.txt", "r") as f:
+    a = f.readlines()[0].removeprefix("token=")
     f.close()
 
 b = discord.Client()
@@ -89,9 +89,8 @@ async def on_message(message):
         await message.channel.send("Checking has stopped!")
 
     if message.content.startswith(".getgamesfromfile"):
-        with open("data/games.txt", "r") as i:
-            for line in i.readlines():
-                e.append(line.strip())
+        with open("data/data.txt", "r") as i:
+            e = i.readlines()[1].removeprefix("games=").split(",")
             for game in e:
                 try:
                     r = json.loads(requests.get(f'https://api.roblox.com/universes/get-universe-containing-place?placeid={game}').text)
