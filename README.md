@@ -20,4 +20,4 @@ Commands:
   - .erasegames - Delete all games from memory (it won't delete them from the file though)
 
 TODO (in this order):
-  - erase games from file
+  - optimalisation
