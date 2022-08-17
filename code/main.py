@@ -103,8 +103,17 @@ async def on_message(message):
                     await message.channel.send(f"Invalid game ID (\"{game}\"). Skipping...")
                 time.sleep(0.2)
     
-    if message.content.startswith(".erasegames"):
+    if message.content.startswith(".erasegamesfrommemory"):
         d = {}
+        await message.channel.send("Erased.")
+    if message.content.startswith(".erasegamesfromfile"):
+        with open("data/data.txt", "r") as f:
+            lines = f.readlines()
+        with open("data/data.txt", "w") as f:
+            for line in lines:
+                if str(line.strip("\n")).startswith("token="):
+                    f.write(line)
+            f.write("games=")
         await message.channel.send("Erased.")
 
 b.run(a)
